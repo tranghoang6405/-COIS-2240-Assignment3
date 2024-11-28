@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class LibraryManagement {
     private Library library = new Library();
+    
+    // Get Transaction instance
+    private Transaction transaction = Transaction.getTransaction();
 
     public static void main(String[] args) {
         new LibraryManagement().run();
@@ -76,7 +79,7 @@ public class LibraryManagement {
                     Book book = library.findBookById(bookId);
 
                     if (member != null && book != null) {
-                    	Transaction.borrowBook(book, member);
+                    	transaction.borrowBook(book, member);
                     } else {
                         System.out.println("Invalid member or book ID.");
                     }
@@ -94,7 +97,7 @@ public class LibraryManagement {
                     book = library.findBookById(bookId);
 
                     if (member != null && book != null) {
-                    	Transaction.returnBook(book, member);
+                    	transaction.returnBook(book, member);
                     } else {
                         System.out.println("Invalid member or book ID.");
                     }
@@ -116,7 +119,7 @@ public class LibraryManagement {
                     }
                     break;
                 case 6:
-                	Transaction.displayTransactionHistory();
+                	transaction.displayTransactionHistory();
                     break;
                 case 7:
                     System.out.println("Exiting. Good Bye..");
