@@ -50,10 +50,14 @@ public class LibraryManagement {
                     String title = scanner.next();
                     
                     scanner.nextLine();
-
+                    
+                    try {
                     Book newBook = new Book(id, title);
                     library.addBook(newBook);
                     System.out.println("Book added to library successfully.");
+                    } catch (Exception e) {
+                    	System.out.println("Error: Invalid ID");
+                    }
                     break;
                 case 3:
                 	System.out.println("\n--- Available Members ---");
