@@ -5,3 +5,13 @@
 2024-11-28 18:35:39 - Borrowing: Anne borrowed Math
 2024-12-04 12:33:05 - Borrowing: Test Member borrowed Test Book
 2024-12-04 12:33:05 - Returning: Test Member returned Test Book
+2024-12-04 12:55:32 - Borrowing: Test Member borrowed Test Book
+2024-12-04 12:55:32 - Returning: Test Member returned Test Book
+2024-12-04 15:14:30 - Borrowing: Test Member borrowed Test Book
+2024-12-04 15:14:30 - Returning: Test Member returned Test Book
+2024-12-04 15:21:30 - Borrowing: Trang borrowed Orange Tree
+2024-12-04 15:21:39 - Borrowing: Thu borrowed Red Bean Paste
+2024-12-04 15:21:48 - Borrowing: Trang borrowed Mockingjay
+2024-12-04 15:22:06 - Returning: Trang returned Mockingjay
+2024-12-04 15:42:43 - Borrowing: Brian borrowed Orange
+2024-12-04 15:48:43 - Borrowing: Ryan borrowed Hero

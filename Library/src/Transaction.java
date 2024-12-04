@@ -43,7 +43,6 @@ public class Transaction {
 
             // Save it to file
             saveTransaction(transactionDetails);
-            
             return true;
         } else {
             System.out.println("The book is not available.");
@@ -90,5 +89,23 @@ public class Transaction {
     	} catch(IOException e) {
     		System.out.println("File doesn't exist or cannot be read");
     	}
+    }
+    
+    // Return transaction history as a string for GUI
+    public String getTransactionHistory() {
+        StringBuilder history = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new FileReader("transaction.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                history.append(line).append("\n");
+            }
+        } catch (IOException e) {
+            return "No transaction history found or the file could not be read.";
+        }
+
+        if (history.length() == 0) {
+            return "No transactions have been recorded yet.";
+        }
+        return history.toString();
     }
 }
