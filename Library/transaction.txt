@@ -15,3 +15,10 @@
 2024-12-04 15:22:06 - Returning: Trang returned Mockingjay
 2024-12-04 15:42:43 - Borrowing: Brian borrowed Orange
 2024-12-04 15:48:43 - Borrowing: Ryan borrowed Hero
+2024-12-04 16:33:39 - Borrowing: Alice borrowed Literature
+2024-12-04 16:33:48 - Borrowing: John borrowed French
+2024-12-04 16:33:55 - Borrowing: Alice borrowed Math
+2024-12-04 16:34:03 - Borrowing: Lisa borrowed Orange Tree
+2024-12-04 16:34:10 - Borrowing: Alice borrowed Chinese
+2024-12-04 16:34:18 - Returning: Alice returned Literature
+2024-12-04 16:34:25 - Borrowing: Lisa borrowed Literature

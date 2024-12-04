@@ -148,10 +148,59 @@ public class LibraryGUI extends Application {
         ComboBox<Member> memberComboBox = new ComboBox<>();
         memberComboBox.getItems().addAll(library.getMembers());
         memberComboBox.setPromptText("Select Member");
+        
+        memberComboBox.setCellFactory(param -> new ListCell<Member>() {
+            @Override
+            protected void updateItem(Member member, boolean empty) {
+                super.updateItem(member, empty);
+                if (empty || member == null) {
+                    setText(null);
+                } else {
+                    setText(member.getId() + " - " + member.getName());
+                }
+            }
+        });
+        
+        memberComboBox.setButtonCell(new ListCell<Member>() {
+            @Override
+            protected void updateItem(Member member, boolean empty) {
+                super.updateItem(member, empty);
+                if (empty || member == null) {
+                    setText(null);
+                } else {
+                    setText(member.getId() + " - " + member.getName());
+                }
+            }
+        });
+
 
         ComboBox<Book> bookComboBox = new ComboBox<>();
         bookComboBox.getItems().addAll(library.getBooks().stream().filter(Book::isAvailable).collect(Collectors.toList()));
         bookComboBox.setPromptText("Select Book");
+        
+        bookComboBox.setCellFactory(param -> new ListCell<Book>() {
+            @Override
+            protected void updateItem(Book book, boolean empty) {
+                super.updateItem(book, empty);
+                if (empty || book == null) {
+                    setText(null);
+                } else {
+                    setText(book.getId() + " - " + book.getTitle());
+                }
+            }
+        });
+        bookComboBox.setButtonCell(new ListCell<Book>() {
+            @Override
+            protected void updateItem(Book book, boolean empty) {
+                super.updateItem(book, empty);
+                if (empty || book == null) {
+                    setText(null);
+                } else {
+                    setText(book.getId() + " - " + book.getTitle());
+                }
+            }
+        });
+
         
         Button borrowButton = new Button("Borrow Book");
 
@@ -189,9 +238,55 @@ public class LibraryGUI extends Application {
         ComboBox<Member> memberComboBox = new ComboBox<>();
         memberComboBox.getItems().addAll(library.getMembers());
         memberComboBox.setPromptText("Select Member");
+        
+        memberComboBox.setCellFactory(param -> new ListCell<Member>() {
+            @Override
+            protected void updateItem(Member member, boolean empty) {
+                super.updateItem(member, empty);
+                if (empty || member == null) {
+                    setText(null);
+                } else {
+                    setText(member.getId() + " - " + member.getName());
+                }
+            }
+        });
+        memberComboBox.setButtonCell(new ListCell<Member>() {
+            @Override
+            protected void updateItem(Member member, boolean empty) {
+                super.updateItem(member, empty);
+                if (empty || member == null) {
+                    setText(null);
+                } else {
+                    setText(member.getId() + " - " + member.getName());
+                }
+            }
+        });
 
         ComboBox<Book> bookComboBox = new ComboBox<>();
         bookComboBox.setPromptText("Select Book to Return");
+        
+        bookComboBox.setCellFactory(param -> new ListCell<Book>() {
+            @Override
+            protected void updateItem(Book book, boolean empty) {
+                super.updateItem(book, empty);
+                if (empty || book == null) {
+                    setText(null);
+                } else {
+                    setText(book.getId() + " - " + book.getTitle());
+                }
+            }
+        });
+        bookComboBox.setButtonCell(new ListCell<Book>() {
+            @Override
+            protected void updateItem(Book book, boolean empty) {
+                super.updateItem(book, empty);
+                if (empty || book == null) {
+                    setText(null);
+                } else {
+                    setText(book.getId() + " - " + book.getTitle());
+                }
+            }
+        });
 
         memberComboBox.setOnAction(e -> {
             Member member = memberComboBox.getValue();
@@ -199,6 +294,7 @@ public class LibraryGUI extends Application {
                 bookComboBox.getItems().setAll(member.getBorrowedBooks());
             }
         });
+        
 
         Button returnButton = new Button("Return Book");
 
@@ -236,6 +332,28 @@ public class LibraryGUI extends Application {
         ComboBox<Member> memberComboBox = new ComboBox<>();
         memberComboBox.getItems().addAll(library.getMembers());
         memberComboBox.setPromptText("Select Member");
+        memberComboBox.setCellFactory(param -> new ListCell<Member>() {
+            @Override
+            protected void updateItem(Member member, boolean empty) {
+                super.updateItem(member, empty);
+                if (empty || member == null) {
+                    setText(null);
+                } else {
+                    setText(member.getId() + " - " + member.getName());
+                }
+            }
+        });
+        memberComboBox.setButtonCell(new ListCell<Member>() {
+            @Override
+            protected void updateItem(Member member, boolean empty) {
+                super.updateItem(member, empty);
+                if (empty || member == null) {
+                    setText(null);
+                } else {
+                    setText(member.getId() + " - " + member.getName());
+                }
+            }
+        });
 
         TextArea borrowedBooksArea = new TextArea();
         borrowedBooksArea.setEditable(false);
