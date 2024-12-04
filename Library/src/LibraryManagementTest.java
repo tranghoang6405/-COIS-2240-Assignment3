@@ -1,4 +1,6 @@
 import static org.junit.Assert.*;
+
+import org.junit.Before;
 import org.junit.Test;
 
 public class LibraryManagementTest {
@@ -51,6 +53,51 @@ public class LibraryManagementTest {
         }
 
 	}
+	
+	private Book book;
+    private Member member;
+    private Transaction transaction;
+    
+    @Before
+    public void setUp() {
+        try {
+            // Initialize the book and member
+            book = new Book(101, "Test Book");
+            member = new Member(1, "Test Member");
+
+            // Retrieve the singleton Transaction instance
+            transaction = Transaction.getTransaction();
+        } catch (Exception e) {
+            fail("Exception during setup: " + e.getMessage());
+        }
+    }
+    
+    @Test
+    public void testBorrowReturn() {
+        // Ensure the book is available
+        assertTrue(book.isAvailable());
+
+        // Borrow the book 
+        boolean borrowSuccess = transaction.borrowBook(book, member);
+        assertTrue(borrowSuccess); 
+        assertFalse(book.isAvailable()); 
+        assertTrue(member.getBorrowedBooks().contains(book)); 
+
+        // Try borrowing the book again (should fail)
+        boolean secondBorrowSuccess = transaction.borrowBook(book, member);
+        assertFalse(secondBorrowSuccess); 
+
+        // Return the book
+        transaction.returnBook(book, member);
+        assertTrue(book.isAvailable()); 
+        assertFalse(member.getBorrowedBooks().contains(book)); 
+
+        // Try returning the book again (fail)
+        transaction.returnBook(book, member);
+        assertTrue(book.isAvailable()); 
+        assertFalse(member.getBorrowedBooks().contains(book));
+    }
+
 	
 	@Test
 	public void testSingletonTransaction() {
