@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
-
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -100,8 +101,25 @@ public class LibraryManagementTest {
 
 	
 	@Test
-	public void testSingletonTransaction() {
-		fail("Not yet implemented");
+	public void testSingletonTransaction() throws Exception {
+		Constructor<Transaction> constructor = Transaction.class.getDeclaredConstructor();
+		
+		int modifiers = constructor.getModifiers();
+        assertEquals(Modifier.PRIVATE, modifiers);
+      
+        Transaction trans1 = Transaction.getTransaction();
+        Transaction trans2 = Transaction.getTransaction();
+        assertNotNull(trans1);
+        assertSame(trans1, trans2);
+        
+        constructor.setAccessible(true);
+        try {
+            Transaction newTrans = constructor.newInstance();
+            fail("Singleton should not allow reflection-based instantiation.");
+        } catch (Exception e) {
+            // Expected behavior
+            assertTrue(e instanceof IllegalAccessException || e.getCause() instanceof UnsupportedOperationException);
+        }
 	}
 
 }

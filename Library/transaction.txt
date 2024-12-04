@@ -3,3 +3,5 @@
 2024-11-28 18:34:33 - Borrowing: Anne borrowed AI
 2024-11-28 18:35:29 - Returning: George returned Math
 2024-11-28 18:35:39 - Borrowing: Anne borrowed Math
+2024-12-04 12:33:05 - Borrowing: Test Member borrowed Test Book
+2024-12-04 12:33:05 - Returning: Test Member returned Test Book
