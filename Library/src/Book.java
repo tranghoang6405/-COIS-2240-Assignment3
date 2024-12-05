@@ -5,7 +5,7 @@ public class Book {
 
     public Book(int id, String title) throws Exception {
     	if (!isValidId(id)) {
-    		throw new Exception(id + "is an invaid book ID.");
+    		throw new Exception(id+" is an invalid book ID.");
     	}
         this.id = id;
         this.title = title;

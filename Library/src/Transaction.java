@@ -9,7 +9,13 @@ import java.io.IOException;
 public class Transaction {
 	// instance of the class
 	private static Transaction instance;
-	private Transaction() {}
+	private static boolean instanceCheck = false;
+	private Transaction() {
+		if (instanceCheck) {
+			throw new UnsupportedOperationException("Singleton instance already created!");
+		}
+		instanceCheck = true;
+	}
 	
 	// Get the single instance of the class
 	public static Transaction getTransaction() {

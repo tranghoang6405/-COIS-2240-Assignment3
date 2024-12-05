@@ -35,7 +35,7 @@ public class LibraryManagementTest {
 		    new Book(1000, "Invalid book");
 		    fail("Exception should be thrown for invalid book ID 1000.");
 		} catch (Exception e) {
-		    assertEquals("Invalid book ID", e.getMessage());
+		    assertEquals("1000 is an invalid book ID.", e.getMessage());
 		}
 
 		// Test two other invalid numbers
@@ -43,14 +43,14 @@ public class LibraryManagementTest {
 		    new Book(99, "Invalid book");
 		    fail("Exception should be thrown for invalid book ID 99.");
 		} catch (Exception e) {
-		    assertEquals("Invalid book ID", e.getMessage());
+		    assertEquals("99 is an invalid book ID.", e.getMessage());
 		}
 				
 	    try {
 		    new Book(1350, "Invalid book");
 		    fail("Exception should be thrown for invalid book ID 1350.");
 		} catch (Exception e) {
-		    assertEquals("Invalid book ID", e.getMessage());
+		    assertEquals("1350 is an invalid book ID.", e.getMessage());
 		}
 
 	}
