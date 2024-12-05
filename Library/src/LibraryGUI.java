@@ -2,14 +2,10 @@ import java.util.stream.Collectors;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.*;
 import javafx.stage.Stage;
 
 public class LibraryGUI extends Application {
@@ -23,7 +19,10 @@ public class LibraryGUI extends Application {
         VBox mainMenu = new VBox(10);
         mainMenu.setPadding(new Insets(10));
         
-        Label welcomeLabel = new Label("Library Management System");	
+        Text welcomeLabel = new Text("Library Management System");
+        welcomeLabel.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
+        welcomeLabel.setFill(Color.PURPLE);
+        
         Button addMemberButton = new Button("Add Member");
         Button addBookButton = new Button("Add Book");
         Button borrowBookButton = new Button("Borrow Book");
@@ -32,6 +31,7 @@ public class LibraryGUI extends Application {
         Button viewTransactionHistoryButton = new Button("View Transaction History");
         Button exitButton = new Button("Exit");
 
+        mainMenu.setStyle("-fx-background-color: #fec9f1; -fx-border-color: #e899dc; -fx-border-width: 2;");
         mainMenu.getChildren().addAll(
                 welcomeLabel,
                 addMemberButton,
@@ -64,6 +64,7 @@ public class LibraryGUI extends Application {
 
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(10));
+        layout.setStyle("-fx-background-color: #FEC9F1; -fx-border-color: #e899dc; -fx-border-width: 2;");
 
         TextField idField = new TextField();
         idField.setPromptText("Member ID");
@@ -113,6 +114,7 @@ public class LibraryGUI extends Application {
 
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(10));
+        layout.setStyle("-fx-background-color: #FEC9F1; -fx-border-color: #e899dc; -fx-border-width: 2");
 
         TextField idField = new TextField();
         idField.setPromptText("Book ID");
@@ -144,6 +146,7 @@ public class LibraryGUI extends Application {
 
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(10));
+        layout.setStyle("-fx-background-color: #FEC9F1; -fx-border-color: #e899dc; -fx-border-width: 2");
 
         ComboBox<Member> memberComboBox = new ComboBox<>();
         memberComboBox.getItems().addAll(library.getMembers());
@@ -234,6 +237,7 @@ public class LibraryGUI extends Application {
 
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(10));
+        layout.setStyle("-fx-background-color: #FEC9F1; -fx-border-color: #e899dc; -fx-border-width: 2");
 
         ComboBox<Member> memberComboBox = new ComboBox<>();
         memberComboBox.getItems().addAll(library.getMembers());
@@ -328,6 +332,7 @@ public class LibraryGUI extends Application {
 
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(10));
+        layout.setStyle("-fx-background-color: #FEC9F1; -fx-border-color: #e899dc; -fx-border-width: 2;");
 
         ComboBox<Member> memberComboBox = new ComboBox<>();
         memberComboBox.getItems().addAll(library.getMembers());
@@ -385,6 +390,7 @@ public class LibraryGUI extends Application {
 
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(10));
+        layout.setStyle("-fx-background-color: #FEC9F1; -fx-border-color: #e899dc; -fx-border-width: 2;");
 
         TextArea transactionHistoryArea = new TextArea();
         transactionHistoryArea.setEditable(false);

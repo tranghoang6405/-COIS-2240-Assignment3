@@ -22,3 +22,5 @@
 2024-12-04 16:34:10 - Borrowing: Alice borrowed Chinese
 2024-12-04 16:34:18 - Returning: Alice returned Literature
 2024-12-04 16:34:25 - Borrowing: Lisa borrowed Literature
+2024-12-04 19:43:05 - Borrowing: Test Member borrowed Test Book
+2024-12-04 19:43:05 - Returning: Test Member returned Test Book
